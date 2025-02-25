@@ -1,0 +1,201 @@
+SQL para Analistas de Dados
+
+
+1. Começando
+
+
+Comandos básicos:
+
+SELECT → Seleciona colunas em uma tabela.
+
+FROM → Define de qual tabela os dados serão extraídos.
+
+WHERE → Filtra registros com base em condições.
+
+GROUP BY → Agrupa registros baseando-se em colunas específicas.
+
+HAVING → Filtra grupos agregados com base em condições.
+
+ORDER BY → Ordena os resultados da consulta.
+
+
+Window Functions
+
+
+Aggregate:
+
+SUM → Retorna a soma dos valores.
+
+COUNT → Conta o número de registros.
+
+MAX → Retorna o maior valor.
+
+MIN → Retorna o menor valor.
+
+AVG → Retorna a média dos valores.
+
+
+2. Evoluindo
+
+
+Expressões condicionais:
+
+CASE WHEN → Estrutura condicional dentro das consultas SQL.
+
+
+Funções de Data:
+
+DATE_TRUNC → Trunca uma data para uma unidade específica (mês, ano, dia).
+
+DATE_PART → Extrai partes específicas de uma data (ano, mês, dia).
+
+EXTRACT → Similar ao DATE_PART, extrai componentes de uma data.
+
+NOW → Retorna a data e hora atuais.
+
+
+Filtros avançados:
+
+BETWEEN → Filtra valores dentro de um intervalo.
+
+LIKE → Pesquisa padrões em strings.
+
+OFFSET → Define um deslocamento na listagem de resultados.
+
+COALESCE → Retorna o primeiro valor não nulo entre os argumentos.
+
+IN / NOT IN → Filtra registros presentes (ou ausentes) em uma lista de valores.
+
+
+JOINs (Junção de tabelas):
+
+LEFT JOIN → Retorna todos os registros da tabela da esquerda e os correspondentes da direita.
+
+RIGHT JOIN → Retorna todos os registros da tabela da direita e os correspondentes da esquerda.
+
+INNER JOIN → Retorna apenas os registros correspondentes entre as tabelas.
+
+FULL OUTER JOIN → Retorna todos os registros de ambas as tabelas, mesmo sem correspondência.
+
+
+3. Dominando
+
+
+Funções de Janela (Window Functions)
+
+
+Valores:
+
+LAST_VALUE → Retorna o último valor em uma janela.
+
+FIRST_VALUE → Retorna o primeiro valor em uma janela.
+
+LEAD → Retorna o próximo valor de uma coluna.
+
+LAG → Retorna o valor anterior de uma coluna.
+
+
+Ranking:
+
+ROW_NUMBER → Retorna a numeração das linhas sem empates.
+
+RANK → Retorna a numeração das linhas considerando empates.
+
+DENSE_RANK → Similar ao RANK, mas sem pular números.
+
+PERCENT_RANK → Calcula a posição percentual de uma linha dentro do conjunto de dados.
+
+NTILE → Divide os registros em N partes iguais.
+
+
+Funções de Strings:
+
+SUBSTRING → Extrai partes de uma string.
+
+CONCAT → Concatena (junta) strings.
+
+TRIM → Remove espaços no início e fim de uma string.
+
+REPLACE → Substitui ocorrências de uma substring dentro de um texto.
+
+
+CTEs (Common Table Expressions):
+
+Permitem criar consultas temporárias reutilizáveis dentro da query SQL.
+Definidas com WITH, melhoram a legibilidade e organização da consulta.
+
+Sintaxe:
+
+WITH cte_nome AS (
+    SELECT coluna1, coluna2
+    FROM tabela
+    WHERE condição
+)
+SELECT * FROM cte_nome;
+
+Exemplo:
+
+Suponha que temos uma tabela vendas e queremos calcular a média de vendas por cliente antes de exibir os clientes que superaram essa média:
+
+WITH vendas_por_cliente AS (
+    SELECT cliente_id, SUM(valor) AS total_vendas
+    FROM vendas
+    GROUP BY cliente_id
+)
+SELECT *
+FROM vendas_por_cliente
+WHERE total_vendas > (SELECT AVG(total_vendas) FROM vendas_por_cliente);
+
+✅ Isso evita repetição de código e torna a consulta mais eficiente.
+
+
+4. Performance e Otimização
+
+
+Análise de Performance:
+
+EXPLAIN ANALYZE → Verifica o plano de execução da consulta para otimização.
+
+INDEXES → Melhora a performance das consultas adicionando índices.
+
+PARTITIONING → Divide grandes tabelas para acelerar consultas.
+
+VACUUM e ANALYZE → Mantém a performance do banco removendo dados antigos e otimizando estatísticas.
+
+
+Manipulação de Dados:
+
+INSERT INTO ... SELECT → Insere dados com base em uma query.
+
+UPDATE → Atualiza registros existentes.
+
+DELETE → Remove registros.
+
+MERGE (ou UPSERT) → Insere ou atualiza registros automaticamente.
+
+WITH RECURSIVE → Permite consultas recursivas para hierarquias e grafos.
+
+
+Funções Matemáticas e Estatísticas:
+
+ROUND → Arredonda valores numéricos.
+
+CEIL / FLOOR → Arredonda para cima ou para baixo.
+
+STDDEV / VARIANCE → Calcula desvio padrão e variância.
+
+
+Tratamento de Dados Nulos:
+
+NULLIF → Retorna NULL se dois valores forem iguais.
+
+IS NULL / IS NOT NULL → Filtra registros nulos.
+
+IFNULL / COALESCE → Retorna o primeiro valor não nulo de uma lista.
+
+
+JSON e Arrays (para bancos modernos como PostgreSQL, MySQL, SQL Server):
+
+JSON_EXTRACT / JSON_QUERY → Extrai dados de um JSON.
+
+ARRAY_AGG → Agrega múltiplos valores em um array.

@@ -1,0 +1,175 @@
+Roadmap de Apache Spark & Delta Lake para Aspirantes a Engenheiros de Dados
+
+
+1. Conceitos Fundamentais
+
+
+Apache Spark:
+
+Driver → Componente principal que gerencia a execução do aplicativo Spark.
+
+Worker → Nós do cluster que executam tarefas distribuídas.
+
+Cluster Manager → Gerencia a alocação de recursos entre diferentes aplicações Spark.
+
+Executor → Processos responsáveis por executar tarefas distribuídas.
+
+DAG (Directed Acyclic Graph) → Representação otimizada das tarefas a serem executadas pelo Spark.
+
+
+Delta Lake:
+
+ACID Transactions → Garante a integridade dos dados com transações atômicas.
+
+Scalable Metadata → Gerenciamento eficiente de metadados para grandes volumes de dados.
+
+Batch/Streaming → Suporte para processamento em lote e em tempo real.
+
+Time Travel → Permite visualizar versões anteriores dos dados.
+
+Open-source → Projeto aberto e mantido pela comunidade.
+
+Schema Evolution/Enforcement → Permite evolução automática do esquema de dados.
+
+Audit History → Mantém histórico de alterações para auditoria.
+
+
+DML Operations:
+
+SQL → Utilizado para consultas estruturadas nos dados.
+
+Python → Interface PySpark para análise e manipulação de dados.
+
+Scala → Linguagem nativa do Spark para maior desempenho.
+
+Java → Alternativa para desenvolvedores que preferem Java.
+
+
+2. Começando
+
+
+IDEs:
+
+Databricks → Plataforma otimizada para execução de Spark na nuvem.
+
+Spark OSS → Implementação open-source para execução local.
+
+Google Colab → Ambiente gratuito para testar scripts PySpark.
+
+
+Manipulação de Dados com DataFrames Spark:
+
+CSV/TXT → Importação e exportação de dados em formato texto.
+
+JSON → Suporte nativo para manipulação de dados JSON.
+
+XML → Manipulação de dados estruturados em XML.
+
+PARQUET → Formato otimizado para armazenamento e processamento de grandes volumes de dados.
+
+
+3. Exemplos
+
+
+Processamento de Dados com Spark
+
+
+Transformations:
+
+MAP → Aplica uma função a cada elemento do RDD/DataFrame.
+
+JOIN → Combina dados de duas ou mais tabelas com base em chaves.
+
+UNION → Une dois conjuntos de dados.
+
+DISTINCT → Remove valores duplicados.
+
+FILTER → Filtra elementos de acordo com uma condição.
+
+COALESCE → Reduz o número de partições sem embaralhamento.
+
+
+Actions:
+
+REDUCE → Agrega todos os elementos de um RDD usando uma função.
+
+TAKE → Retorna os primeiros N elementos.
+
+COLLECT → Retorna todos os elementos de um RDD/DataFrame.
+
+COUNT → Conta o número total de registros.
+
+FIRST → Retorna o primeiro elemento do RDD/DataFrame.
+
+
+Gerenciando Dados no Delta Lake
+
+
+Persistência:
+
+MERGE → Une dados novos e existentes com base em chaves.
+
+UPSERT → Insere ou atualiza registros conforme necessário.
+
+DELETE → Remove registros com base em uma condição.
+
+
+Features:
+
+VERSION AS OF → Consulta dados de versões anteriores.
+
+DESCRIBE DETAIL → Exibe informações detalhadas sobre uma tabela Delta.
+
+DESCRIBE HISTORY → Exibe o histórico de alterações na tabela.
+
+OPTIMIZE → Compacta arquivos para melhorar a performance.
+
+ZORDER → Reorganiza dados para consultas mais eficientes.
+
+PARTITIONED BY → Particiona dados para otimizar leitura e escrita.
+
+LIQUID CLUSTERING → Técnica para organização eficiente dos dados.
+
+
+4. Dominando
+
+
+Integração e Orquestração
+
+
+Cloud:
+
+S3 → Armazenamento escalável na AWS.
+
+ADLS → Azure Data Lake Storage, solução otimizada para dados no Azure.
+
+GCS → Google Cloud Storage, solução da Google para grandes volumes de dados.
+
+
+Orquestração:
+
+Apache Airflow → Framework de orquestração de workflows de dados.
+
+Dagster → Plataforma moderna para engenharia de dados.
+
+Databricks Workflows → Solução nativa do Databricks para automação de pipelines.
+
+Azure Data Factory → Solução da Microsoft para integração e ETL na nuvem.
+
+
+Performance Tuning Techniques:
+
+Data Serialization → Melhora a eficiência da serialização de objetos.
+
+Memory Management → Gerencia o uso de memória para evitar gargalos.
+
+Data Locality → Aproxima processamento e armazenamento para otimizar performance.
+
+Partitioning Strategies → Estratégias para dividir dados de forma eficiente.
+
+Data Skewness → Mitigação de distribuição desigual dos dados.
+
+Garbage Collection Tuning → Ajustes para reduzir impacto da coleta de lixo.
+
+Spark SQL Performance → Otimização de consultas SQL no Spark.
+
