@@ -1,0 +1,114 @@
+1. Começando
+
+Comandos Básicos
+
+Get-Help → Exibe ajuda sobre comandos.
+Get-Command → Lista os comandos disponíveis.
+Get-Alias → Exibe atalhos para comandos.
+Get-Member → Lista propriedades e métodos de um objeto.
+Clear-Host (cls) → Limpa a tela do terminal.
+Write-Host → Exibe mensagens na tela.
+
+Manipulação de Arquivos e Pastas
+
+New-Item → Cria arquivos e pastas.
+Remove-Item → Remove arquivos ou pastas.
+Rename-Item → Renomeia arquivos ou pastas.
+Copy-Item → Copia arquivos ou pastas.
+Move-Item → Move arquivos ou pastas.
+Get-ChildItem (ls, dir) → Lista arquivos e pastas.
+
+Manipulação de Texto
+
+Write-Output → Saída de texto.
+Read-Host → Entrada de dados do usuário.
+Out-File → Salvar saída em um arquivo.
+Set-Content → Escrever conteúdo em um arquivo.
+Add-Content → Adicionar conteúdo em um arquivo.
+
+2. Evoluindo
+
+Estruturas de Controle
+
+if / else → Estruturas condicionais.
+switch → Estruturas de decisão múltipla.
+foreach → Iteração sobre coleções.
+while → Loop baseado em condição.
+for → Loop com contadores.
+do-while → Loop executado pelo menos uma vez.
+
+Trabalhando com Processos e Serviços
+
+Get-Process → Lista processos em execução.
+Stop-Process → Finaliza processos.
+Start-Process → Inicia processos.
+Get-Service → Lista serviços do sistema.
+Start-Service → Inicia um serviço.
+Stop-Service → Para um serviço.
+Restart-Service → Reinicia um serviço.
+
+Manipulação de Variáveis e Objetos
+
+$variavel = "valor" → Definição de variáveis.
+Get-Variable → Lista variáveis disponíveis.
+Select-Object → Seleciona propriedades de objetos.
+Sort-Object → Ordena objetos.
+Where-Object → Filtra objetos.
+
+Trabalhando com JSON e CSV
+
+ConvertTo-Json → Converte para JSON.
+ConvertFrom-Json → Converte JSON para objeto.
+Export-Csv → Exporta dados para CSV.
+Import-Csv → Importa dados de CSV.
+
+3. Dominando
+
+Administração de Sistemas
+
+Get-WmiObject → Consulta informações do sistema.
+Get-EventLog → Consulta eventos do Windows.
+Get-NetIPAddress → Obtém informações de rede.
+Test-Connection → Testa conectividade (ping).
+Get-Disk → Obtém informações sobre discos.
+Get-Volume → Lista volumes do sistema.
+
+Automação e Agendamento de Tarefas
+
+Start-Job → Inicia um job em segundo plano.
+Get-Job → Obtém status de um job.
+Wait-Job → Aguarda a conclusão de um job.
+Unregister-ScheduledTask → Remove tarefas agendadas.
+
+Segurança e Permissões
+
+Get-ACL → Obtém permissões de arquivos e pastas.
+Set-ACL → Define permissões em arquivos e pastas.
+ConvertTo-SecureString → Criptografa strings sensíveis.
+Get-Credential → Captura credenciais de forma segura.
+
+Trabalhando com Active Directory (AD)
+
+Get-ADUser → Obtém usuários do AD.
+New-ADUser → Cria novos usuários no AD.
+Remove-ADUser → Remove usuários do AD.
+Get-ADGroup → Obtém grupos do AD.
+Add-ADGroupMember → Adiciona usuários a um grupo.
+
+4. Performance e Melhores Práticas
+
+Técnicas de Otimização
+
+Measure-Command → Mede o tempo de execução.
+Write-Verbose → Adiciona mensagens detalhadas ao script.
+Write-Debug → Adiciona mensagens de depuração.
+Try/Catch → Tratamento de erros.
+Start-Transcript → Gera logs de execução.
+
+Gerenciamento de Módulos e Scripts
+
+Get-Module → Lista módulos carregados.
+Import-Module → Importa módulos adicionais.
+Find-Module → Pesquisa módulos no PowerShell Gallery.
+Install-Module → Instala módulos.
+Publish-Module → Publica módulos personalizados.
